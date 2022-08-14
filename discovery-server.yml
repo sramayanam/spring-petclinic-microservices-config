@@ -3,11 +3,11 @@
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: "${HOSTNAME}.eureka"
   # standalone mode
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
 
