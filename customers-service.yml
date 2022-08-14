@@ -2,8 +2,13 @@
   profiles: default
 eureka:
   instance:
-    # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
 
 ---
 spring:
